@@ -1,8 +1,9 @@
+# import tensorflow
 from models import unet, segnet
 from utils import segdata_generator
-from keras.optimizers import Adam, SGD
-from keras import backend as K
-from keras.callbacks import ModelCheckpoint
+from tensorflow.keras.optimizers import Adam, SGD
+from tensorflow.keras import backend as K
+from tensorflow.keras.callbacks import ModelCheckpoint
 import os
 import argparse
 import matplotlib
