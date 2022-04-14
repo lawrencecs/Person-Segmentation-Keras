@@ -18,6 +18,8 @@ def get_batch(items, root_path, nClasses, height, width):
         im[:, :, :] = 128
         lim = np.zeros((height, width, 3), dtype='uint8')
 
+        if img is None:
+            continue
         if img.shape[0] >= img.shape[1]:
             scale = img.shape[0] / height
             new_width = int(img.shape[1] / scale)
