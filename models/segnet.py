@@ -1,9 +1,9 @@
-from tensorflow.keras.layers import Activation, Reshape, Permute
-from tensorflow.keras.layers.normalization import BatchNormalization
-from tensorflow.keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D
-from tensorflow.keras.models import Model
-from tensorflow.keras.initializers import orthogonal, he_normal
-from tensorflow.keras.regularizers import l2
+from keras.layers import Activation, Reshape, Permute
+from keras.layers.normalization import BatchNormalization
+from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D
+from keras.models import Model
+from keras.initializers import orthogonal, he_normal
+from keras.regularizers import l2
 
 
 def SegNet(nClasses, input_height=256, input_width=256):

@@ -1,4 +1,4 @@
-# import tensorflow
+from tensorflow import keras
 from models import unet, segnet
 from utils import segdata_generator
 from tensorflow.keras.optimizers import Adam, SGD
@@ -84,11 +84,11 @@ def main():
         else './weights/{}_parse_weights.h5'.format(args.model)
     checkpoint = ModelCheckpoint(save_file, monitor='val_acc', save_best_only=True, save_weights_only=True, verbose=1)
     history = model.fit_generator(train,
-                        steps_per_epoch=12706 // train_batch_size,
-                        validation_data=val,
-                        validation_steps=5000 // val_batch_size,
-                        epochs=epochs,
-                        callbacks=[checkpoint],
+                                  steps_per_epoch=12706 // train_batch_size,
+                                  validation_data=val,
+                                  validation_steps=5000 // val_batch_size,
+                                  epochs=epochs,
+                                  callbacks=[checkpoint],
                                   )
     plot_history(history, './results/', args.model)
     save_history(history, './results/', args.model)
